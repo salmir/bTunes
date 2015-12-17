@@ -1,0 +1,112 @@
+.root {
+    -fx-background-color: #1E3442;
+}
+
+.table-view {
+    -fx-base: transparent;
+    -fx-background-color: radial-gradient(center 50% 50% , radius 60% , #61a2b1, #000040);
+    -fx-control-inner-background: transparent;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: #61a2b1;
+}
+
+
+#hBox {
+    -fx-background-color: radial-gradient(center 50% 50% , radius 60% , #61a2b1, #000040);
+}
+
+#leftTabs {
+    -fx-background-color: radial-gradient(center 50% 50% , radius 60% , #61a2b1, #000040);
+}
+
+#leftTabs .list-view {
+    -fx-base: transparent;
+    -fx-background-color: transparent;
+}
+
+#rightTabs {
+    -fx-background-color: radial-gradient(center 50% 50% , radius 60% , #61a2b1, #000040);
+    -fx-control-inner-background: transparent;
+}
+
+.tab *.tab-label {
+    -fx-text-fill: white;
+}
+
+.tab-pane .tab{
+    -fx-background-color: radial-gradient(center 50% 50% , radius 60% , #61a2b1, #000040);
+    -fx-text-fill: white;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #61a2b1;
+}
+
+.list-cell {
+    -fx-text-fill: white;
+}
+
+.menu-bar {
+    -fx-background-color: #000040;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.text-field{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.text-area {
+    -fx-base: transparent;
+    -fx-background-color: transparent;
+}
+
+.text {
+    -fx-text-fill: white;
+}
+
+.radio-button {
+    -fx-text-fill: white;
+}
+
+.context-menu {
+    -fx-background-color: #61a2b1;
+}
+
+.scroll-bar {
+    -fx-base: #61a2b1;
+}
+
+.axis {
+    -fx-tick-label-fill: white;
+}
+
+.split-pane-divider {
+    -fx-background-color:  #d3d3d3;
+}
+
+.slider .track {
+    -fx-background-color: radial-gradient(center 50% 50% , radius 60% , #61a2b1, #000040);
+}
+
+.slider .thumb {
+    -fx-color: #add8e6;
+
+}
+
+.date-picker-display-node {
+    -fx-text-fill: black;
+}
+
+.combo-box .list-cell  {
+    -fx-background-color: #61a2b1;
+}

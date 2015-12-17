@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="300.0" prefHeight="495.0" prefWidth="770.0" stylesheets="@DarkBlue.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.tuwien.sepm.musicplayer.presentation.StatisticController">
+   <center>
+      <TabPane fx:id="tabPane_Statisitc" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="tab_History" text="History">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="413.0" prefWidth="770.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <center>
+                              <TableView fx:id="tableView_History" prefHeight="345.0" prefWidth="770.0" BorderPane.alignment="CENTER">
+                                <columns>
+                                  <TableColumn fx:id="tc_statisticArtist" editable="false" prefWidth="170.0" text="Artist" />
+                                    <TableColumn fx:id="tc_statisticTitle" editable="false" minWidth="0.0" prefWidth="336.0" text="Title" />
+                                    <TableColumn fx:id="tc_statisticDate" editable="false" prefWidth="251.0" sortType="DESCENDING" text="Date" />
+                                </columns>
+                              </TableView>
+                           </center>
+                           <top>
+                              <FlowPane hgap="5.0" prefHeight="39.0" prefWidth="770.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="Search ">
+                                       <FlowPane.margin>
+                                          <Insets left="5.0" />
+                                       </FlowPane.margin></Label>
+                                    <TextField prefHeight="21.0" prefWidth="296.0">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets></TextField>
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets top="5.0" />
+                                 </BorderPane.margin>
+                              </FlowPane>
+                           </top>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tab_Statistic" text="Statistics">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BarChart fx:id="barChart_NumberOfSongs" layoutX="102.0" layoutY="7.0" prefHeight="413.0" prefWidth="770.0" title="Number of songs played" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Top List">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane layoutX="264.0" layoutY="71.0" prefHeight="413.0" prefWidth="770.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <top>
+                              <FlowPane alignment="CENTER_LEFT" hgap="5.0" prefHeight="29.0" prefWidth="770.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="Top " />
+                                    <TextField fx:id="tf_topCount" prefHeight="25.0" prefWidth="43.0" text="10" />
+                                    <Button fx:id="btn_refreshTopCount" mnemonicParsing="false" onAction="#refreshTopCountAction" text="Refresh" />
+                                    <Button fx:id="btn_addToNewPlaylist" mnemonicParsing="false" onAction="#addToNewPlaylistAction" text="Add to new playlist" />
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets bottom="5.0" left="5.0" top="5.0" />
+                                 </BorderPane.margin>
+                              </FlowPane>
+                           </top>
+                           <center>
+                              <BarChart fx:id="barChart_TopChart" BorderPane.alignment="CENTER">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </BarChart>
+                           </center>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <top>
+      <Pane prefHeight="53.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <DatePicker fx:id="datePicker_FromDate" layoutX="52.0" layoutY="11.0" prefHeight="25.0" prefWidth="100.0" />
+            <DatePicker fx:id="datePicker_ToDate" layoutX="219.0" layoutY="11.0" prefHeight="25.0" prefWidth="100.0" />
+            <Label layoutX="14.0" layoutY="16.0" text="From " />
+            <Label layoutX="198.0" layoutY="16.0" text="To " />
+         </children>
+      </Pane>
+   </top>
+</BorderPane>

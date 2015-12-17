@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="111.0" prefWidth="400.0" stylesheets="@DarkBlue.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.tuwien.sepm.musicplayer.presentation.SavePlaylistController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="55.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="536.0" minWidth="10.0" prefWidth="345.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="68.0" vgrow="ALWAYS" />
+    <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Name:">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets left="2.0" />
+         </padding></Label>
+      <TextField fx:id="tf_playlistname" prefHeight="31.0" prefWidth="352.0" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets bottom="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets left="2.0" />
+         </padding>
+      </TextField>
+      <HBox alignment="BOTTOM_RIGHT" prefHeight="39.0" prefWidth="345.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+         <children>
+            <Button fx:id="bt_save" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#saveButtonAction" text="Save" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="5.0" right="15.0" />
+               </HBox.margin></Button>
+            <Button fx:id="bt_cancelplaylist" mnemonicParsing="false" onAction="#cancelActionn" text="Cancel">
+               <HBox.margin>
+                  <Insets bottom="5.0" right="5.0" />
+               </HBox.margin></Button>
+         </children>
+         <GridPane.margin>
+            <Insets bottom="3.0" right="5.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets left="2.0" />
+         </padding>
+      </HBox>
+   </children>
+</GridPane>

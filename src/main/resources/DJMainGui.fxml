@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainPain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@DarkBlue.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.tuwien.sepm.musicplayer.presentation.DJMainController">
+   <left>
+      <AnchorPane maxHeight="-Infinity" maxWidth="250.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="dj_left_tableView" maxWidth="250.0" prefHeight="460.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="tc_left_artist" maxWidth="75.0" prefWidth="75.0" text="Artist" />
+                  <TableColumn fx:id="tc_left_title" maxWidth="105.0" prefWidth="105.0" text="Title" />
+                  <TableColumn fx:id="tc_left_duration" maxWidth="55.0" prefWidth="55.0" styleClass="duration" text="" />
+               </columns>
+            </TableView>
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" top="20.0" />
+         </BorderPane.margin>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane maxHeight="-Infinity" maxWidth="250.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="dj_right_tableView" maxWidth="250.0" prefHeight="460.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="tc_right_artist" maxWidth="75.0" prefWidth="75.0" text="Artist" />
+                  <TableColumn fx:id="tc_right_title" maxWidth="105.0" prefWidth="105.0" text="Title" />
+                  <TableColumn fx:id="tc_right_duration" maxWidth="55.0" prefWidth="55.0" styleClass="duration" text="" />
+               </columns>
+            </TableView>
+         </children>
+         <BorderPane.margin>
+            <Insets right="20.0" top="20.0" />
+         </BorderPane.margin>
+      </AnchorPane>
+   </right>
+   <center>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="dj_toRight_btn" layoutX="30.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchFromLeftToRight" prefHeight="40.0" prefWidth="40.0" styleClass="mediaButton">
+            </Button>
+            <Button fx:id="dj_toLeft_btn" layoutX="370.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchFromRightToLeft" prefHeight="40.0" prefWidth="40.0" styleClass="mediaButton">
+            </Button>
+            <Label fx:id="dj_right_song_label" layoutX="110.0" layoutY="82.0" prefHeight="19.0" prefWidth="230.0" textAlignment="CENTER" textFill="#494545">
+            </Label>
+            <Label fx:id="dj_left_song_label" layoutX="110.0" layoutY="40.0" prefHeight="19.0" prefWidth="230.0" textFill="#494545">
+            </Label>
+            <Slider fx:id="djLeftDuration" layoutX="100.0" layoutY="25.0" prefWidth="250.0" />
+            <Slider fx:id="djRightDuration" layoutX="100.0" layoutY="66.0" prefWidth="250.0" />
+            <Label fx:id="lb_left_currentTime" layoutX="64.0" layoutY="21.0" prefHeight="19.0" prefWidth="36.0" textAlignment="RIGHT" textFill="#494545" />
+            <Label fx:id="lb_left_duration" layoutX="355.0" layoutY="21.0" prefHeight="19.0" prefWidth="60.0" textFill="#494545" />
+            <Label fx:id="lb_right_currentTime" layoutX="64.0" layoutY="63.0" prefHeight="19.0" prefWidth="36.0" textAlignment="RIGHT" textFill="#494545" />
+            <Label fx:id="lb_right_duration" layoutX="355.0" layoutY="63.0" prefHeight="19.0" prefWidth="60.0" textFill="#494545">
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="dj_left_previous_btn" layoutX="64.0" layoutY="34.0" mnemonicParsing="false" onAction="#leftLastClicked" prefHeight="32.0" prefWidth="37.0" styleClass="mediaButton" />
+            <Button fx:id="dj_left_stop_btn" layoutX="104.0" layoutY="34.0" mnemonicParsing="false" onAction="#leftStopClicked" prefHeight="32.0" prefWidth="37.0" styleClass="mediaButton" />
+            <ToggleButton fx:id="dj_left_playPause_btn" layoutX="144.0" layoutY="34.0" mnemonicParsing="false" onAction="#leftPlayPauseClicked" prefHeight="32.0" prefWidth="37.0" styleClass="mediaButton" />
+            <Button fx:id="dj_left_next_btn" layoutX="184.0" layoutY="34.0" mnemonicParsing="false" onAction="#leftNextClicked" prefHeight="32.0" prefWidth="37.0" styleClass="mediaButton" />
+            <Button fx:id="dj_right_previous_btn" layoutX="780.0" layoutY="30.0" mnemonicParsing="false" onAction="#rightLastClicked" prefHeight="32.0" prefWidth="37.0" styleClass="mediaButton" />
+            <Button fx:id="dj_right_stop_btn" layoutX="820.0" layoutY="30.0" mnemonicParsing="false" onAction="#rightStopClicked" prefHeight="32.0" prefWidth="37.0" styleClass="mediaButton" />
+            <ToggleButton fx:id="dj_right_playPause_btn" layoutX="860.0" layoutY="30.0" mnemonicParsing="false" onAction="#rightPlayPauseClicked" prefHeight="32.0" prefWidth="37.0" styleClass="mediaButton" />
+            <Button fx:id="dj_right_next_btn" layoutX="900.0" layoutY="30.0" mnemonicParsing="false" onAction="#rightNextClicked" prefHeight="32.0" prefWidth="37.0" styleClass="mediaButton" />
+            <Slider fx:id="fadeVolume" blockIncrement="0.05" layoutX="327.0" layoutY="16.0" minorTickCount="5" showTickMarks="true" styleClass="mediaButton">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Slider>
+            <Label layoutX="377.0" layoutY="-8.0" text="Volume" />
+            <Label layoutX="597.0" layoutY="19.0" text="fade-Time [sec.]" textFill="#202020" />
+            <Label fx:id="lb_fadeTimeValue" contentDisplay="CENTER" layoutX="700.0" layoutY="39.0" prefHeight="23.0" prefWidth="28.0" textFill="#202020">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Slider fx:id="fadeTimeSlider" blockIncrement="500.0" layoutX="584.0" layoutY="43.0" majorTickUnit="20000.0" max="20000.0" minorTickCount="40" prefHeight="14.0" prefWidth="110.0" snapToTicks="true" value="5000.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Slider>
+            <Label layoutX="457.0" layoutY="3.0" text="right" textFill="#000000d9">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="320.0" layoutY="3.0" text="left" textFill="#000000d9">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Slider fx:id="masterVolume" blockIncrement="0.05" layoutX="327.0" layoutY="46.0" majorTickUnit="1.0" max="1.0" showTickMarks="true" value="0.5">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Slider>
+            <Label layoutX="319.0" layoutY="61.0" text="min" textFill="#000000d9">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="458.0" layoutY="61.0" text="max" textFill="#000000d9">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Button fx:id="dj_fade_btn" layoutX="511.0" layoutY="24.0" mnemonicParsing="false" onAction="#fadeSong" prefHeight="39.0" prefWidth="42.0" styleClass="mediaButton" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <top>
+      <AnchorPane minHeight="-Infinity" prefHeight="40.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="TOP" layoutX="392.0" layoutY="-6.0" prefHeight="79.0" prefWidth="216.0" text="bTunes" textAlignment="CENTER" textFill="#4f4a4add" AnchorPane.topAnchor="-6.0">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </top>
+</BorderPane>

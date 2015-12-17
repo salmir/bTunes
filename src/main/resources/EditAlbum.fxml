@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="162.0" prefWidth="400.0" stylesheets="@DarkBlue.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.tuwien.sepm.musicplayer.presentation.EditAlbumController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="68.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="536.0" minWidth="10.0" prefWidth="332.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="68.0" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Label text="Name:">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <GridPane.margin>
+                <Insets left="5.0" />
+            </GridPane.margin>
+            <padding>
+                <Insets left="2.0" />
+            </padding></Label>
+        <TextField fx:id="tf_album_name" prefHeight="31.0" prefWidth="352.0" GridPane.columnIndex="1">
+            <GridPane.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </GridPane.margin>
+            <padding>
+                <Insets left="2.0" />
+            </padding>
+        </TextField>
+        <HBox alignment="BOTTOM_RIGHT" prefHeight="30.0" prefWidth="340.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+            <children>
+                <Button fx:id="bt_save" alignment="CENTER" mnemonicParsing="false" onAction="#saveButtonAction" text="Save">
+                    <HBox.margin>
+                        <Insets bottom="5.0" right="15.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="bt_cancel" alignment="CENTER" mnemonicParsing="false" onAction="#cancelAction" text="Cancel">
+                    <HBox.margin>
+                        <Insets bottom="5.0" right="5.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+            <GridPane.margin>
+                <Insets bottom="3.0" right="5.0" />
+            </GridPane.margin>
+            <padding>
+                <Insets left="2.0" />
+            </padding>
+        </HBox>
+      <Label prefHeight="21.0" prefWidth="67.0" text="  Release:" GridPane.rowIndex="1" />
+      <TextField fx:id="tf_album_release" prefHeight="38.0" prefWidth="325.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets left="2.0" />
+         </padding>
+      </TextField>
+    </children>
+</GridPane>

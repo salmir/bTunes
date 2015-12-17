@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="770.0" stylesheets="@DarkBlue.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.tuwien.sepm.musicplayer.presentation.YoutubeController">
+   <top>
+      <AnchorPane prefHeight="95.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="input_txt" layoutX="82.0" layoutY="35.0" prefHeight="25.0" prefWidth="200.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></TextField>
+            <Button fx:id="search_btn" layoutX="290.0" layoutY="35.0" mnemonicParsing="false" onAction="#searchAction" text="Search" />
+            <Label layoutX="24.0" layoutY="42.0" text="Search:">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.4180602006688963" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="result_tb" prefHeight="398.0" prefWidth="317.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="tc_number" prefWidth="75.0" text="Number" />
+                      <TableColumn fx:id="tc_title" prefWidth="242.0" text="Title" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ImageView fx:id="image" fitHeight="196.0" fitWidth="277.0" layoutX="105.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="play_btn" layoutX="212.0" layoutY="266.0" mnemonicParsing="false" onAction="#playButtonAction" prefHeight="63.0" prefWidth="63.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>

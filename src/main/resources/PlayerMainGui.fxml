@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane minHeight="600.0" minWidth="800.0" prefHeight="700.0" prefWidth="1100.0" stylesheets="DarkBlue.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.tuwien.sepm.musicplayer.presentation.PlayerMainController">
+    <bottom>
+        <AnchorPane minHeight="85.0" prefHeight="85.0">
+            <children>
+                <BorderPane prefHeight="84.0" prefWidth="991.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                    <center>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="265.0" prefHeight="45.0" prefWidth="315.0">
+                            <children>
+                                <Button fx:id="bt_nextsong" layoutX="132.0" layoutY="5.0" mnemonicParsing="false" onAction="#nextSongButtonAction" prefHeight="35.0" prefWidth="35.0" styleClass="mediaButton" AnchorPane.leftAnchor="130.0" />
+                                <ToggleButton fx:id="tgbt_playpausesong" layoutX="84.0" mnemonicParsing="false" onAction="#playPauseButtonAction" prefHeight="45.0" prefWidth="45.0" AnchorPane.leftAnchor="80.0" />
+                                <Button fx:id="bt_repeat" layoutX="267.0" layoutY="5.0" mnemonicParsing="false" onAction="#repeatButtonAction" prefHeight="25.0" prefWidth="25.0" styleClass="mediaButton" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="250.0" />
+                                <ToggleButton fx:id="tgbt_shuffle" layoutX="298.0" layoutY="5.0" mnemonicParsing="false" onAction="#shuffleButtonAction" prefHeight="25.0" prefWidth="25.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="280.0" />
+                                <Button fx:id="bt_stopsong" layoutX="45.0" layoutY="5.0" mnemonicParsing="false" onAction="#stopButtonAction" prefHeight="35.0" prefWidth="35.0" styleClass="mediaButton" AnchorPane.leftAnchor="40.0" />
+                                <Button fx:id="bt_previoussong" layoutX="6.0" layoutY="5.0" mnemonicParsing="false" onAction="#previousSongButtonAction" prefHeight="35.0" prefWidth="35.0" styleClass="mediaButton" AnchorPane.leftAnchor="0.0">
+                                    <padding>
+                                        <Insets left="2.0" />
+                                    </padding>
+                                </Button>
+                            </children>
+                        </AnchorPane>
+                    </center>
+                    <top>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="697.0" BorderPane.alignment="TOP_CENTER">
+                            <children>
+                                <Slider fx:id="sl_time" layoutX="45.0" layoutY="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="400.0" />
+                                <Label fx:id="lab_time" layoutX="5.0" layoutY="1.0" prefHeight="30.0" prefWidth="41.0" />
+                                <Label fx:id="lab_duration" layoutX="460.0" layoutY="1.0" prefHeight="30.0" prefWidth="49.0" />
+                                <Slider fx:id="sl_sound" layoutX="575.0" layoutY="9.0" prefHeight="18.0" prefWidth="118.0">
+                                    <padding>
+                                        <Insets left="5.0" right="10.0" />
+                                    </padding>
+                                </Slider>
+                                <Button fx:id="bt_sound" alignment="TOP_LEFT" layoutX="550.0" layoutY="6.0" maxHeight="25.0" maxWidth="25.0" mnemonicParsing="false" onAction="#soundButtonAction" prefHeight="25.0" prefWidth="25.0" styleClass="mediaButton" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="6.0" />
+                            </children>
+                            <BorderPane.margin>
+                                <Insets />
+                            </BorderPane.margin>
+                        </AnchorPane>
+                    </top>
+                    <right>
+                        <AnchorPane prefHeight="55.0" prefWidth="189.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <Button fx:id="dj_btn" layoutX="130.0" layoutY="6.0" mnemonicParsing="false" onAction="#djButtonAction" prefHeight="45.0" prefWidth="45.0" styleClass="mediaButton" AnchorPane.bottomAnchor="5.0">
+                                </Button>
+                                <Button fx:id="youtube_btn" layoutX="79.0" layoutY="6.0" mnemonicParsing="false" onAction="#youtubeAction" prefHeight="45.0" prefWidth="45.0" styleClass="mediaButton" AnchorPane.bottomAnchor="5.0" />
+                                <Button fx:id="bt_similarplaylist" layoutX="7.0" layoutY="11.0" mnemonicParsing="false" onAction="#createSimilarPlaylistAction" prefHeight="35.0" prefWidth="65.0" styleClass="mediaButton" AnchorPane.bottomAnchor="8.0" />
+                            </children>
+                        </AnchorPane>
+                    </right>
+                    <left>
+                        <AnchorPane minHeight="45.0" prefHeight="55.0" prefWidth="198.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <Label fx:id="lab_songname" maxWidth="200.0" minHeight="0.0" minWidth="0.0" prefHeight="30.0" prefWidth="180.0">
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </left>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </bottom>
+    <top>
+        <MenuBar maxHeight="25.0" minHeight="25.0" prefHeight="25.0" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="mu_addfile" mnemonicParsing="false" onAction="#addFileToMediathekAction" text="Import Music..." />
+                        <MenuItem fx:id="mu_showStatistic" mnemonicParsing="false" onAction="#showStatisticsAction" text="Show Statistics..." />
+                        <MenuItem fx:id="mu_exit" mnemonicParsing="false" text="Exit" />
+                    </items>
+                </Menu>
+                <Menu fx:id="mu_playlist" mnemonicParsing="false" text="Playlist">
+                    <items>
+                        <MenuItem fx:id="mu_createplaylist" mnemonicParsing="false" onAction="#playlistCreateAction" text="Create new Playlist" />
+                        <MenuItem fx:id="mu_editplaylist" mnemonicParsing="false" onAction="#playlistEditAction" text="Edit Playlist" />
+                        <MenuItem fx:id="mu_deleteplaylist" mnemonicParsing="false" onAction="#playlistDeleteAction" text="Delete Playlist" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Ringtones">
+                    <items>
+                        <MenuItem fx:id="mu_importsharefile" mnemonicParsing="false" onAction="#ringtoneSharefileImportAction" text="Import Ringtone Sharefile" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#showAboutAction" text="About" />
+                    </items>
+                </Menu>
+            <!--Menu mnemonicParsing="false" text="Extras">
+               <items>
+                  <SeparatorMenuItem mnemonicParsing="false" text="Style Color" />
+                  <RadioMenuItem mnemonicParsing="false" onAction="#changeStyleToDarkBlue" text="Dark Blue" />
+                  <RadioMenuItem mnemonicParsing="false" onAction="#changeStyleToFlashRed" text="Flashing Red" />
+               </items>
+            </Menu-->
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.16, 0.8" minWidth="800.0" prefWidth="1100.0">
+            <items>
+                <AnchorPane maxWidth="300.0" minWidth="150.0" prefWidth="184.0">
+                    <children>
+                        <BorderPane id="leftTabs" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <center>
+                                <TabPane layoutX="2.0" layoutY="36.0" GridPane.rowIndex="1">
+                                    <tabs>
+                                        <Tab fx:id="tab_playlists" closable="false" onSelectionChanged="#playlistTabSelected" text="Playlists">
+                                            <content>
+                                                <ListView fx:id="listv_playlists" VBox.vgrow="ALWAYS">
+                                                    <VBox.margin>
+                                                        <Insets />
+                                                    </VBox.margin>
+                                                </ListView>
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="tab_artists" closable="false" onSelectionChanged="#artistTabSelected" text="Artists">
+                                            <content>
+                                                <ListView fx:id="listv_artists" />
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="tab_albums" closable="false" onSelectionChanged="#albumTabSelected" text="Albums">
+                                            <content>
+                                                <ListView fx:id="listv_albums" />
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                    <BorderPane.margin>
+                                        <Insets left="2.0" />
+                                    </BorderPane.margin>
+                                </TabPane>
+                            </center>
+                            <top>
+                                <AnchorPane prefHeight="30.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <Button fx:id="bt_create" layoutX="10.0" mnemonicParsing="false" onAction="#playlistCreateAction" prefHeight="30.0" prefWidth="30.0" styleClass="mediaButton" AnchorPane.leftAnchor="10.0" />
+                                        <Button fx:id="bt_mediaLibrary" layoutX="120.0" mnemonicParsing="false" onAction="#mediaLibraryClicked" prefHeight="30.0" prefWidth="30.0" styleClass="mediaButton" AnchorPane.rightAnchor="5.0" />
+                                    </children>
+                                </AnchorPane>
+                            </top>
+                        </BorderPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane>
+                    <children>
+                        <BorderPane fx:id="bp_mainPane" minHeight="0.0" minWidth="0.0" prefHeight="609.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <top>
+                                <HBox id="hBox" fx:id="pane" minHeight="0.0" minWidth="0.0" prefHeight="40.0" prefWidth="759.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <Label fx:id="lab_search" alignment="BOTTOM_CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="51.0" text="Search:">
+                                            <padding>
+                                                <Insets bottom="10.0" />
+                                            </padding>
+                                            <HBox.margin>
+                                                <Insets left="5.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                        <TextField fx:id="tf_search" prefHeight="31.0" prefWidth="244.0" HBox.hgrow="ALWAYS">
+                                            <opaqueInsets>
+                                                <Insets />
+                                            </opaqueInsets>
+                                            <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                            </HBox.margin>
+                                        </TextField>
+                                    </children>
+                                    <padding>
+                                        <Insets left="2.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </HBox>
+                            </top>
+                            <center>
+                                <TableView fx:id="tv_song" BorderPane.alignment="CENTER">
+                                    <!--<GridPane.margin>-->
+                                    <!--<Insets bottom="5.0" left="5.0" right="5.0" />-->
+                                    <!--</GridPane.margin>-->
+                                    <cursor>
+                                        <Cursor fx:constant="DEFAULT" />
+                                    </cursor>
+                                    <opaqueInsets>
+                                        <Insets top="5.0" />
+                                    </opaqueInsets>
+                                </TableView>
+                            </center>
+                            <cursor>
+                                <Cursor fx:constant="DEFAULT" />
+                            </cursor>
+                        </BorderPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane maxWidth="300.0" minWidth="200.0">
+                    <children>
+                        <TabPane id="rightTabs" minWidth="195.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <tabs>
+                                <Tab fx:id="tab_artist" text="Artist">
+                                    <content>
+                                        <VBox maxWidth="300.0" minHeight="0.0" minWidth="0.0">
+                                            <children>
+                                                <StackPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="200.0">
+                                                    <VBox.margin>
+                                                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                                                    </VBox.margin>
+                                                    <padding>
+                                                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                    </padding>
+                                                    <children>
+                                                        <ImageView fx:id="img_artistimage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+                                                            <StackPane.margin>
+                                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                            </StackPane.margin>
+                                                        </ImageView>
+                                                    </children>
+                                                </StackPane>
+                                                <HBox minHeight="0.0" minWidth="0.0" prefHeight="35.0">
+                                                    <children>
+                                                        <Label minHeight="0.0" minWidth="0.0" text="Biography">
+                                                            <VBox.margin>
+                                                                <Insets bottom="5.0" />
+                                                            </VBox.margin>
+                                                            <padding>
+                                                                <Insets left="2.0" right="2.0" />
+                                                            </padding>
+                                                            <HBox.margin>
+                                                                <Insets left="5.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                                <TextArea id="textArea" fx:id="ta_bio" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="195.0" prefWidth="250.0" VBox.vgrow="ALWAYS">
+                                                    <VBox.margin>
+                                                        <Insets />
+                                                    </VBox.margin>
+                                                    <padding>
+                                                        <Insets bottom="2.0" right="2.0" />
+                                                    </padding>
+                                                </TextArea>
+                                            </children>
+                                        </VBox>
+                                    </content>
+                                </Tab>
+                                <Tab fx:id="tab_album" text="Album">
+                                    <content>
+                                        <VBox>
+                                            <children>
+                                                <StackPane prefHeight="150.0" prefWidth="200.0">
+                                                    <VBox.margin>
+                                                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                                                    </VBox.margin>
+                                                    <padding>
+                                                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                    </padding>
+                                                    <children>
+                                                        <ImageView fx:id="img_albumcover" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                            <StackPane.margin>
+                                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                                            </StackPane.margin>
+                                                        </ImageView>
+                                                    </children>
+                                                </StackPane>
+                                                <Label fx:id="lab_albumname" text="Album name:">
+                                                    <VBox.margin>
+                                                        <Insets bottom="5.0" left="5.0" />
+                                                    </VBox.margin>
+                                                    <padding>
+                                                        <Insets bottom="2.0" left="2.0" right="2.0" />
+                                                    </padding>
+                                                </Label>
+                                                <TextField fx:id="tf_albumname" maxWidth="280.0" prefHeight="19.0" prefWidth="220.0">
+                                                    <VBox.margin>
+                                                        <Insets bottom="5.0" right="2.0" />
+                                                    </VBox.margin>
+                                                    <padding>
+                                                        <Insets bottom="2.0" left="2.0" right="2.0" />
+                                                    </padding>
+                                                </TextField>
+                                            </children>
+                                        </VBox>
+                                    </content>
+                                </Tab>
+                                <Tab fx:id="tab_lyrics" text="Lyrics">
+                                    <content>
+                                        <TextArea fx:id="ta_lyrics" prefHeight="560.0" prefWidth="186.0">
+                                            <cursor>
+                                                <Cursor fx:constant="DEFAULT" />
+                                            </cursor>
+                                            <effect>
+                                                <Blend mode="LIGHTEN" />
+                                            </effect>
+                                            <opaqueInsets>
+                                                <Insets />
+                                            </opaqueInsets>
+                                        </TextArea>
+                                    </content>
+                                </Tab>
+                                <Tab fx:id="tab_concerts" onSelectionChanged="#tabConcertSelected" text="Concerts">
+                                    <content>
+                                        <AnchorPane maxWidth="300.0" prefHeight="250.0">
+                                            <children>
+                                                <Label layoutX="4.0" layoutY="14.0" text="Upcoming Concerts:" />
+                                                <TextArea fx:id="ta_tracklist" layoutY="42.0" maxWidth="300.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0">
+                                                    <padding>
+                                                        <Insets right="2.0" />
+                                                    </padding>
+                                                </TextArea>
+                                            </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                            <padding>
+                                <Insets bottom="2.0" left="2.0" right="2.0" />
+                            </padding>
+                        </TabPane>
+                    </children></AnchorPane>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>

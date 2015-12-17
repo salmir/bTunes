@@ -1,0 +1,1 @@
+DELETE FROM Song WHERE name='ServiceSongTest';
